@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  origin:
+    build: ./origin
+    container_name: nginx_origin
+    image: nginx-origin
+    restart: always
+
+  cache:
+    build: ./cache
+    container_name: nginx_cache
+    image: nginx-cache
+    restart: always
+    ports:
+      - 8080:80
+
